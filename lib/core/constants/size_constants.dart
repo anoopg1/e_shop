@@ -18,4 +18,3 @@ const kwidth20 = SizedBox(
 const kwidth30 = SizedBox(
   width: 30,
 );
-

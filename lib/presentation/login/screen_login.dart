@@ -1,6 +1,6 @@
 import 'package:e_shop/core/constants/size_constants.dart';
-import 'package:e_shop/presentation/home/main_screen.dart';
-import 'package:e_shop/presentation/home/screen_home.dart';
+import 'package:e_shop/presentation/main_page/main_screen.dart';
+
 import 'package:e_shop/presentation/signup/screen_signup.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';

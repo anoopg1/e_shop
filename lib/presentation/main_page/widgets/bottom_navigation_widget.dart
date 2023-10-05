@@ -11,10 +11,10 @@ class BottomNavigationEshop extends StatelessWidget {
       valueListenable: selectedIndex,
       builder: (context, updatedIndex, child) {
         return BottomNavigationBar(
-          backgroundColor: Colors.blueGrey,
-          showUnselectedLabels: true,
-          selectedItemColor: Colors.white,
-          unselectedItemColor: Colors.grey,
+            backgroundColor: Colors.blueGrey,
+            showUnselectedLabels: true,
+            selectedItemColor: Colors.white,
+            unselectedItemColor: Colors.grey,
             onTap: (value) {
               selectedIndex.value = value;
             },
@@ -23,6 +23,8 @@ class BottomNavigationEshop extends StatelessWidget {
               BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
               BottomNavigationBarItem(
                   icon: Icon(Icons.category), label: "category"),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.person), label: "Profile"),
             ]);
       },
     );

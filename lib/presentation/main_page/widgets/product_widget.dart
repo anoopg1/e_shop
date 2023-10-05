@@ -2,8 +2,19 @@ import 'package:e_shop/presentation/product_details/product_details.dart';
 import 'package:flutter/material.dart';
 
 class ProductWidget extends StatelessWidget {
-  const ProductWidget({super.key, required this.index});
+  const ProductWidget(
+      {super.key,
+      required this.index,
+      required this.imageUrl,
+      required this.price,
+      required this.productName,
+      required this.productDescription});
   final int index;
+  final String imageUrl;
+  final String price;
+  final String productName;
+  final String productDescription;
+
   @override
   Widget build(BuildContext context) {
     final deviceheight = MediaQuery.of(context).size.height;
@@ -11,7 +22,12 @@ class ProductWidget extends StatelessWidget {
     return InkWell(
       onTap: () {
         Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => ScreenProductDetails(),
+          builder: (context) => ScreenProductDetails(
+              index: index,
+              price: "₹ $price",
+              imageUrl: imageUrl,
+              productName: productName,
+              productDescription: productDescription),
         ));
       },
       child: Card(
@@ -19,25 +35,23 @@ class ProductWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              height: deviceheight*0.16,
+              height: deviceheight * 0.13,
               width: double.infinity,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      fit: BoxFit.fill,
-                      image: NetworkImage(
-                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPghOOd2L-tgW8XsLejVjYKsG4MkF7TgScJA&usqp=CAU"))),
+                      fit: BoxFit.fill, image: NetworkImage(imageUrl))),
             ),
             const Divider(),
-            const Padding(
+            Padding(
               padding: const EdgeInsets.only(left: 10),
               child: Text(
-                "₹ 25000",
-                style: TextStyle(color: Colors.black, fontSize: 20),
+                "₹ $price",
+                style: const TextStyle(color: Colors.black, fontSize: 20),
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 10),
-              child: Text("Xiaomi 13T Pro"),
+              child: Text(productName),
             )
           ],
         ),

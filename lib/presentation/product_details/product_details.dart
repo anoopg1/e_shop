@@ -3,7 +3,12 @@ import 'package:e_shop/infrastructure/wishlist_repository.dart';
 import 'package:flutter/material.dart';
 
 class ScreenProductDetails extends StatelessWidget {
-  const ScreenProductDetails({super.key});
+  const ScreenProductDetails({super.key, required this.index, required this.price, required this.imageUrl, required this.productName, required this.productDescription});
+  final int index;
+  final String price;
+  final String imageUrl;
+  final String productName;
+  final String productDescription;
 
   @override
   Widget build(BuildContext context) {
@@ -16,23 +21,21 @@ class ScreenProductDetails extends StatelessWidget {
             height: MediaQuery.of(context).size.height * 0.50,
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    fit: BoxFit.fill,
-                    image: NetworkImage(
-                        "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"))),
+                    fit: BoxFit.fill, image: NetworkImage(imageUrl))),
           ),
           kheight20,
           Text(
-            "₹ 2500",
+            price,
             style: TextStyle(fontSize: 30),
           ),
           kheight20,
           Text(
-            "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+            productName,
             style: TextStyle(fontSize: 30),
           ),
           kheight20,
           Text(
-            "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+            productDescription,
             style: TextStyle(fontSize: 20),
             textAlign: TextAlign.justify,
           ),

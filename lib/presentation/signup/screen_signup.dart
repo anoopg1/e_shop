@@ -1,5 +1,4 @@
 import 'package:e_shop/core/constants/size_constants.dart';
-import 'package:e_shop/presentation/home/screen_home.dart';
 import 'package:e_shop/presentation/login/screen_login.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -67,7 +66,7 @@ class ScreenSignup extends StatelessWidget {
                         email: _emailController.text,
                         password: _passwordController.text,
                       );
-                     
+
                       Future.delayed(Duration(seconds: 2));
                       Navigator.pop(context, ScreenLogin());
                       // Successful signup
