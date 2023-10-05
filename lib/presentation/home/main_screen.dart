@@ -1,3 +1,4 @@
+import 'package:e_shop/presentation/cart/screen_cart.dart';
 import 'package:e_shop/presentation/home/screen_category.dart';
 import 'package:e_shop/presentation/home/screen_home.dart';
 import 'package:e_shop/presentation/home/widgets/bottom_navigation_widget.dart';
@@ -24,7 +25,9 @@ class MainScreen extends StatelessWidget {
                   },
                   icon: const Icon(Icons.favorite_border_rounded)),
               IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                     Navigator.of(context).push(MaterialPageRoute(builder: (context) => ScreenCart(),));
+                  },
                   icon: const Icon(Icons.shopping_cart_outlined))
             ],
           ),

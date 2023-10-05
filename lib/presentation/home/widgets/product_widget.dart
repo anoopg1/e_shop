@@ -19,7 +19,7 @@ class ProductWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              height: 150,
+              height: deviceheight*0.16,
               width: double.infinity,
               decoration: BoxDecoration(
                   image: DecorationImage(
@@ -32,7 +32,7 @@ class ProductWidget extends StatelessWidget {
               padding: const EdgeInsets.only(left: 10),
               child: Text(
                 "₹ 25000",
-                style: TextStyle(color: Colors.black, fontSize: 24),
+                style: TextStyle(color: Colors.black, fontSize: 20),
               ),
             ),
             Padding(
