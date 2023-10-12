@@ -32,7 +32,7 @@ class WomenClothingProductWidget extends StatelessWidget {
                           state.womenClothingProducts[index].price.toString(),
                       productName: state.womenClothingProducts[index].title!,
                       productDescription:
-                          state.womenClothingProducts[index].description!),
+                          state.womenClothingProducts[index].description!, id: state.womenClothingProducts[index].id!,),
                 ),
               );
             } else {

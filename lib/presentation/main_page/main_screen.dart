@@ -12,7 +12,7 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final mainScreenList = [ScreenHome(), Screencategory(),ProfileWidget()];
+    final mainScreenList = [ScreenHome(), Screencategory(), ScreenProfile()];
     return ValueListenableBuilder(
       valueListenable: selectedIndex,
       builder: (context, updatedIndex, child) {

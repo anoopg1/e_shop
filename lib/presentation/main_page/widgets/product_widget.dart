@@ -8,12 +8,14 @@ class ProductWidget extends StatelessWidget {
       required this.imageUrl,
       required this.price,
       required this.productName,
-      required this.productDescription});
+      required this.productDescription,
+      required this.id});
   final int index;
   final String imageUrl;
   final String price;
   final String productName;
   final String productDescription;
+  final int id;
 
   @override
   Widget build(BuildContext context) {
@@ -23,11 +25,13 @@ class ProductWidget extends StatelessWidget {
       onTap: () {
         Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => ScreenProductDetails(
-              index: index,
-              price: "₹ $price",
-              imageUrl: imageUrl,
-              productName: productName,
-              productDescription: productDescription),
+            index: index,
+            price: "₹ $price",
+            imageUrl: imageUrl,
+            productName: productName,
+            productDescription: productDescription,
+            id: id,
+          ),
         ));
       },
       child: Card(

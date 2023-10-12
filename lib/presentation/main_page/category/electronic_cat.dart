@@ -29,12 +29,14 @@ class ElectronicsProductWidget extends StatelessWidget {
                       crossAxisCount: 2),
                   itemCount: state.electronicProducts.length,
                   itemBuilder: (context, index) => ProductWidget(
-                      index: index,
-                      imageUrl: state.electronicProducts[index].image!,
-                      price: state.electronicProducts[index].price.toString(),
-                      productName: state.electronicProducts[index].title!,
-                      productDescription:
-                          state.electronicProducts[index].description!),
+                    index: index,
+                    imageUrl: state.electronicProducts[index].image!,
+                    price: state.electronicProducts[index].price.toString(),
+                    productName: state.electronicProducts[index].title!,
+                    productDescription:
+                        state.electronicProducts[index].description!,
+                    id: state.womenClothingProducts[index].id!,
+                  ),
                 ),
               );
             } else {

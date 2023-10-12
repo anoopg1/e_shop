@@ -31,7 +31,7 @@ class MenClothingProductWidget extends StatelessWidget {
                       price: state.menclothingProducts[index].price.toString(),
                       productName: state.menclothingProducts[index].title!,
                       productDescription:
-                          state.menclothingProducts[index].description!),
+                          state.menclothingProducts[index].description!, id: state.womenClothingProducts[index].id!,),
                 ),
               );
             } else {

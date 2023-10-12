@@ -10,20 +10,22 @@ class ScreenHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    BlocProvider.of<HomeBloc>(context).add(HomeEvent.getAllProducts());
+    BlocProvider.of<HomeBloc>(context).add(const HomeEvent.getAllProducts());
     return Scaffold(body: BlocBuilder<HomeBloc, HomeState>(
       builder: (context, state) {
         if (state.allproducts.length >= 10) {
           return SizedBox(
             child: GridView.builder(
-              gridDelegate:
-                  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2),
               itemCount: state.allproducts.length,
               itemBuilder: (context, index) => ProductWidget(
                 index: index,
                 imageUrl: state.allproducts[index].image!,
                 price: state.allproducts[index].price.toString(),
-                productName: state.allproducts[index].title!, productDescription:state.allproducts[index].description! ,
+                productName: state.allproducts[index].title!,
+                productDescription: state.allproducts[index].description!,
+                id: state.allproducts[index].id!,
               ),
             ),
           );

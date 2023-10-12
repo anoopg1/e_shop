@@ -1,14 +1,23 @@
 import 'package:e_shop/core/constants/size_constants.dart';
 import 'package:e_shop/infrastructure/wishlist_repository.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
 class ScreenProductDetails extends StatelessWidget {
-  const ScreenProductDetails({super.key, required this.index, required this.price, required this.imageUrl, required this.productName, required this.productDescription});
+  const ScreenProductDetails(
+      {super.key,
+      required this.index,
+      required this.price,
+      required this.imageUrl,
+      required this.productName,
+      required this.productDescription,
+      required this.id});
   final int index;
   final String price;
   final String imageUrl;
   final String productName;
   final String productDescription;
+  final int id;
 
   @override
   Widget build(BuildContext context) {
@@ -43,16 +52,25 @@ class ScreenProductDetails extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(
+              SizedBox(
                 height: MediaQuery.of(context).size.height * 0.050,
                 width: MediaQuery.of(context).size.width * 0.40,
                 child: ElevatedButton(
                     onPressed: () {
-                      addToWishlist("1");
+                      // addToWishlist("1");
+
+                      DatabaseReference databaseReference =
+                          FirebaseDatabase.instance.ref();
+                      databaseReference.child('users').child('user1').set({
+                        'name': 'John Doe',
+                        'email': 'johndoe@example.com',
+                        'age': 30,
+                        'wishlist': []
+                      });
                     },
                     child: const Text("Add to Wishlist")),
               ),
-              Container(
+              SizedBox(
                 height: MediaQuery.of(context).size.height * 0.050,
                 width: MediaQuery.of(context).size.width * 0.40,
                 child: ElevatedButton(

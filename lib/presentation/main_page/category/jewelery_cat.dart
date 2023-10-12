@@ -31,7 +31,7 @@ class JeweleryProductWidget extends StatelessWidget {
                       price: state.jeweleryProducts[index].price.toString(),
                       productName: state.jeweleryProducts[index].title!,
                       productDescription:
-                          state.jeweleryProducts[index].description!),
+                          state.jeweleryProducts[index].description!, id: state.womenClothingProducts[index].id!,),
                 ),
               );
             } else {

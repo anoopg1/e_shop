@@ -1,9 +1,11 @@
 import 'package:e_shop/core/constants/size_constants.dart';
+import 'package:e_shop/main.dart';
 import 'package:e_shop/presentation/main_page/main_screen.dart';
 
 import 'package:e_shop/presentation/signup/screen_signup.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ScreenLogin extends StatelessWidget {
   const ScreenLogin({super.key});
@@ -17,7 +19,7 @@ class ScreenLogin extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           "E-shop",
-          style: TextStyle(color: Colors.yellow, fontSize: 20),
+          style: TextStyle(color: Colors.white, fontSize: 20),
         ),
       ),
       body: Padding(
@@ -56,7 +58,10 @@ class ScreenLogin extends StatelessWidget {
                           email: _emailController.text,
                           password: _passwordController.text,
                         );
-                        Navigator.of(context).push(
+                        SharedPreferences sharedpref =
+                            await SharedPreferences.getInstance();
+                        await sharedpref.setBool(SAVE_KEY_NAME, true);
+                        Navigator.of(context).pushReplacement(
                           MaterialPageRoute(
                             builder: (context) => MainScreen(),
                           ),
